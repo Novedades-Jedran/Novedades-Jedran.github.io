@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Novedades Jedran - variedad de productos, regalos, juguetes, cosméticos, hogar, moda y más.">
+<meta name="theme-color" content="#071f5b">
+<title>Novedades Jedran | Catálogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+ <div class="container nav">
+  <a href="#inicio" class="logo"><img src="assets/logo-jedran.jpeg" alt="Novedades Jedran"></a>
+  <button class="menu" id="menu" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="navLinks">
+   <a class="active" href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#ofertas">Ofertas</a><a href="#contacto">Contacto</a>
+   <a class="whatsapp" target="_blank" rel="noopener" href="https://wa.me/527701192781?text=Hola%20Novedades%20Jedran,%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.">WhatsApp</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+ <div class="hero-shape"></div>
+ <div class="container hero-grid">
+  <div class="hero-text">
+   <span class="eyebrow">NOVEDADES JEDRAN</span>
+   <h1>Encuentra lo que buscas <strong>y mucho más.</strong></h1>
+   <p>Descubre nuestra variedad de productos: regalos, juguetes, cosméticos, hogar, moda, accesorios y muchas novedades.</p>
+   <div class="buttons"><a class="btn primary" href="#productos">Ver catálogo</a><a class="btn green" target="_blank" rel="noopener" href="https://wa.me/527701192781?text=Hola%20Novedades%20Jedran,%20quiero%20ver%20el%20cat%C3%A1logo.">Consultar por WhatsApp</a></div>
+   <div class="schedule"><b>Martes a domingo</b><span>11:30 A.M. — 7:30 P.M.</span></div>
+  </div>
+  <div class="hero-logo"><img src="assets/logo-jedran.jpeg" alt="Logo de Novedades Jedran con fénix azul"></div>
+ </div>
+</section>
+
+<section class="section categories" id="categorias">
+ <div class="container">
+  <div class="heading"><span>DESCUBRE</span><h2>Nuestras categorías</h2><p>Selecciona una categoría para encontrar tus productos.</p></div>
+  <div class="category-grid">
+   <button data-category="Regalos">🎁<b>Regalos</b></button><button data-category="Cosméticos">💄<b>Cosméticos</b></button><button data-category="Juguetes">🧸<b>Juguetes</b></button><button data-category="Hogar">🏠<b>Hogar</b></button><button data-category="Accesorios">📱<b>Accesorios</b></button><button data-category="Moda">👕<b>Moda</b></button><button data-category="Papelería">✏️<b>Papelería</b></button><button data-category="Otros">✨<b>Otros</b></button>
+  </div>
+ </div>
+</section>
+
+<section class="section catalog" id="productos">
+ <div class="container">
+  <div class="heading left"><span>CATÁLOGO</span><h2>Productos disponibles</h2><p>Consulta disponibilidad y precio directamente por WhatsApp.</p></div>
+  <div class="filters" id="filters"><button class="selected" data-filter="Todos">Todos</button><button data-filter="Regalos">Regalos</button><button data-filter="Cosméticos">Cosméticos</button><button data-filter="Juguetes">Juguetes</button><button data-filter="Hogar">Hogar</button><button data-filter="Accesorios">Accesorios</button><button data-filter="Moda">Moda</button><button data-filter="Papelería">Papelería</button><button data-filter="Otros">Otros</button></div>
+  <div class="product-grid" id="productGrid"></div>
+ </div>
+</section>
+
+<section class="section offers" id="ofertas"><div class="container offer-card"><div><span>✨ NOVEDADES Y PROMOCIONES</span><h2>Siempre hay algo nuevo en Jedran.</h2><p>Pregunta por las ofertas, productos nuevos y disponibilidad.</p><a class="btn light" target="_blank" rel="noopener" href="https://wa.me/527701192781?text=Hola%20Novedades%20Jedran,%20%C2%BFqu%C3%A9%20ofertas%20y%20novedades%20tienen%20disponibles%3F">Preguntar por ofertas</a></div><img src="assets/banner-jedran.jpeg" alt="Novedades Jedran"></div></section>
+
+<section class="section about"><div class="container about-grid"><div class="about-logo"><img src="assets/logo-jedran.jpeg" alt="Novedades Jedran"></div><div><span class="eyebrow">SOMOS JEDRAN</span><h2>Una tienda de novedades para toda ocasión.</h2><p>Tenemos una variedad de artículos para regalar, disfrutar, decorar y usar todos los días. Nuestro catálogo irá creciendo con nuevos productos.</p><div class="benefits"><div>✓ <b>Gran variedad</b></div><div>✓ <b>Atención personalizada</b></div><div>✓ <b>Nuevos productos</b></div></div></div></div></section>
+</main>
+
+<footer id="contacto" class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="assets/logo-jedran.jpeg" alt="Novedades Jedran"><p>Encuentra lo que buscas y mucho más.</p></div><div><h3>Contacto</h3><a target="_blank" rel="noopener" href="https://wa.me/527701192781">💬 WhatsApp: +52 770 119 2781</a><a href="tel:+525623792086">📞 Llamadas: 562 379 2086</a><p>🕒 Martes a domingo<br>11:30 A.M. a 7:30 P.M.</p></div><div><h3>¿Tienes alguna pregunta?</h3><p>Escríbenos y con gusto te ayudamos a encontrar el producto que buscas.</p><a class="footer-button" target="_blank" rel="noopener" href="https://wa.me/527701192781">Hablar por WhatsApp →</a></div></div><div class="copy">© <span id="year"></span> Novedades Jedran · Todos los derechos reservados.</div></footer>
+<a class="floating" target="_blank" rel="noopener" aria-label="WhatsApp" href="https://wa.me/527701192781?text=Hola%20Novedades%20Jedran,%20tengo%20una%20consulta.">💬</a>
+<script src="script.js"></script>
+</body></html>
