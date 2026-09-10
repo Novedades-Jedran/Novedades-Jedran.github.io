@@ -1,97 +1,13 @@
-const products = [
-  { name: "Set de Cosméticos para Mujer", category: "Cosméticos", price: 299, icon: "💄" },
-  { name: "Oso de Peluche 45 cm", category: "Juguetes", price: 249, icon: "🧸" },
-  { name: "Audífonos Inalámbricos Bluetooth", category: "Accesorios", price: 399, icon: "🎧" },
-  { name: "Freidora de Aire 4.5 L", category: "Hogar", price: 1199, icon: "🍟" },
-  { name: "Set de Brochas de Maquillaje", category: "Cosméticos", price: 199, icon: "💅" },
-  { name: "Taza para Regalo", category: "Regalos", price: 129, icon: "☕" },
-  { name: "Lámpara Decorativa", category: "Hogar", price: 349, icon: "💡" },
-  { name: "Accesorios para Celular", category: "Accesorios", price: 149, icon: "📱" },
-  { name: "Kit de Regalo Especial", category: "Regalos", price: 299, icon: "🎁" },
-  { name: "Juguete Infantil", category: "Juguetes", price: 179, icon: "🚗" },
-  { name: "Agenda y Papelería", category: "Otros", price: 119, icon: "📒" },
-  { name: "Artículo de Moda", category: "Otros", price: 249, icon: "👕" }
-];
-
-const grid = document.getElementById("productGrid");
-const filters = document.querySelectorAll(".filter");
-const showAll = document.getElementById("showAll");
-
-function money(value) {
-  return new Intl.NumberFormat("es-MX", {
-    style: "currency",
-    currency: "MXN",
-    maximumFractionDigits: 0
-  }).format(value);
+const products = [["producto-01.jpeg", "Colores y papelería", "Papelería"], ["producto-02.jpeg", "Producto infantil", "Juguetes"], ["producto-03.jpeg", "Accesorio para cabello", "Accesorios"], ["producto-04.jpeg", "Producto infantil", "Juguetes"], ["producto-05.jpeg", "Juego infantil", "Juguetes"], ["producto-06.jpeg", "Muñequitos de regalo", "Regalos"], ["producto-07.jpeg", "Set de juguete", "Juguetes"], ["producto-08.jpeg", "Producto educativo", "Juguetes"], ["producto-09.jpeg", "Set de construcción", "Juguetes"], ["producto-10.jpeg", "Speed Racing", "Juguetes"], ["producto-11.jpeg", "Artículo Spider-Man", "Juguetes"], ["producto-12.jpeg", "Juguete infantil", "Juguetes"], ["producto-13.jpeg", "Artículo Spider-Man", "Juguetes"], ["producto-14.jpeg", "Colores para dibujo", "Papelería"], ["producto-15.jpeg", "Set infantil", "Juguetes"], ["producto-16.jpeg", "Accesorio de temporada", "Otros"], ["producto-17.jpeg", "Bolsa / accesorio", "Moda"], ["producto-18.jpeg", "Producto de temporada", "Otros"], ["producto-19.jpeg", "Mascarilla facial", "Cosméticos"], ["producto-20.jpeg", "Reloj inteligente", "Accesorios"], ["producto-21.jpeg", "Prenda de vestir", "Moda"], ["producto-22.jpeg", "Accesorio", "Accesorios"], ["producto-23.jpeg", "Prenda de vestir", "Moda"], ["producto-24.jpeg", "Prenda de vestir", "Moda"], ["producto-25.jpeg", "Prenda de vestir", "Moda"], ["producto-26.jpeg", "Prenda de vestir", "Moda"], ["producto-27.jpeg", "Prenda de vestir", "Moda"], ["producto-28.jpeg", "Decoración de graduación", "Regalos"], ["producto-29.jpeg", "Prenda de vestir", "Moda"], ["producto-30.jpeg", "Decoración / diseño", "Otros"], ["producto-31.jpeg", "Bolsa con diseño", "Regalos"], ["producto-32.jpeg", "Muñecos de graduación", "Regalos"], ["producto-33.jpeg", "Plumas y papelería", "Papelería"], ["producto-34.jpeg", "Artículo Spider-Man", "Juguetes"], ["producto-35.jpeg", "Decoración para hogar", "Hogar"], ["producto-36.jpeg", "Bolsa Liverpool", "Regalos"], ["producto-37.jpeg", "Bolsa de regalo", "Regalos"], ["producto-38.jpeg", "Tarjeta de cumpleaños", "Regalos"], ["producto-39.jpeg", "Set de arte", "Papelería"], ["producto-40.jpeg", "Juego de mesa", "Juguetes"], ["producto-41.jpeg", "Paraguas", "Hogar"], ["producto-42.jpeg", "Artículo para hogar", "Hogar"], ["producto-43.jpeg", "Pelotas", "Juguetes"], ["producto-44.jpeg", "Set de maquillaje", "Cosméticos"], ["producto-45.jpeg", "Calzado", "Moda"], ["producto-46.jpeg", "Accesorios deportivos", "Otros"]];
+const phone='527701192781';
+const grid=document.getElementById('productGrid');
+const filters=[...document.querySelectorAll('[data-filter]')];
+function wa(name){return `https://wa.me/${phone}?text=${encodeURIComponent(`Hola Novedades Jedran, me interesa el producto "${name}". ¿Me pueden compartir precio y disponibilidad?`)}`}
+function render(filter='Todos'){
+ const list=filter==='Todos'?products:products.filter(p=>p[2]===filter);
+ grid.innerHTML=list.length?list.map(p=>`<article class="product"><img class="product-image" loading="lazy" src="assets/${p[0]}" alt="${p[1]}"><div class="product-body"><span class="tag">${p[2]}</span><h3>${p[1]}</h3><a class="ask" target="_blank" rel="noopener" href="${wa(p[1])}">💬 Consultar por WhatsApp</a></div></article>`).join(''):`<div class="empty">No hay productos en esta categoría.</div>`;
 }
-
-function renderProducts(category = "Todos", all = false) {
-  const filtered = category === "Todos"
-    ? products
-    : products.filter(p => p.category === category);
-
-  const list = all ? filtered : filtered.slice(0, 8);
-
-  grid.innerHTML = list.map(p => `
-    <article class="product-card">
-      <div class="product-photo" aria-hidden="true">${p.icon}</div>
-      <div class="product-content">
-        <span class="product-category">${p.category}</span>
-        <h3>${p.name}</h3>
-        <div class="product-price">${money(p.price)}</div>
-        <a class="product-cta"
-           href="https://wa.me/527701192781?text=${encodeURIComponent(`Hola Novedades Jedran, me interesa el producto "${p.name}" de ${money(p.price)}.`)}"
-           target="_blank" rel="noopener">Consultar por WhatsApp</a>
-      </div>
-    </article>
-  `).join("");
-
-  showAll.textContent = all ? "Mostrar menos ↑" : "Ver todos →";
-  showAll.dataset.all = all ? "true" : "false";
-}
-
-filters.forEach(btn => {
-  btn.addEventListener("click", () => {
-    filters.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderProducts(btn.dataset.filter, false);
-  });
-});
-
-showAll.addEventListener("click", () => {
-  const active = document.querySelector(".filter.active")?.dataset.filter || "Todos";
-  const all = showAll.dataset.all !== "true";
-  renderProducts(active, all);
-});
-
-document.querySelectorAll(".category-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const category = card.dataset.category;
-    const filter = [...filters].find(b => b.dataset.filter === category);
-    if (filter) {
-      filters.forEach(b => b.classList.remove("active"));
-      filter.classList.add("active");
-      renderProducts(category, false);
-    }
-  });
-});
-
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
-
-menuToggle.addEventListener("click", () => {
-  const open = mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
-  menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-});
-
-mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Abrir menú");
-  });
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-renderProducts();
+filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');render(btn.dataset.filter);document.getElementById('productos').scrollIntoView({behavior:'smooth',block:'start'})}));
+document.querySelectorAll('.category-grid button').forEach(btn=>btn.addEventListener('click',()=>{const cat=btn.dataset.category;const target=filters.find(b=>b.dataset.filter===cat);if(target)target.click()}));
+const menu=document.getElementById('menu'),nav=document.getElementById('navLinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open?'true':'false')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();render();

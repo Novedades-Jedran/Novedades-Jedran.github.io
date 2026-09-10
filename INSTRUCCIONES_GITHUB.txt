@@ -1,0 +1,22 @@
+NOVEDADES JEDRAN - ACTUALIZACIÓN DE IMÁGENES
+
+Esta versión ya tiene el código preparado para las 46 fotografías nuevas.
+Las fotografías fueron renombradas de forma sencilla para evitar problemas con espacios, paréntesis y nombres de WhatsApp.
+
+SUBE A GITHUB ESTOS ARCHIVOS:
+- index.html
+- styles.css
+- script.js
+- carpeta assets completa
+
+DENTRO DE assets DEBEN ESTAR:
+- logo-jedran.jpeg
+- banner-jedran.jpeg
+- producto-01.jpeg hasta producto-46.jpeg
+
+IMPORTANTE:
+1. No cambies los nombres de los archivos.
+2. No cambies la ubicación de la carpeta assets.
+3. Sube las 46 fotos a la carpeta assets de GitHub.
+4. No hay precios en el catálogo.
+5. Cada producto tiene un botón para consultar precio y disponibilidad por WhatsApp.
