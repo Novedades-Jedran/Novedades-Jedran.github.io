@@ -17,7 +17,7 @@
   <a href="#inicio" class="logo"><img src="logo-jedran.jpeg" alt="Novedades Jedran"></a>
   <button class="menu" id="menu" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav id="navLinks">
-   <a class="active" href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#ofertas">Ofertas</a><a href="#contacto">Contacto</a>
+   <a class="active" href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#productos">Productos</a><a href="#ofertas">Ofertas</a><a href="#ubicacion">Ubicación</a><a href="#contacto">Contacto</a>
    <a class="whatsapp" target="_blank" rel="noopener" href="https://wa.me/527701192781?text=Hola%20Novedades%20Jedran,%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.">WhatsApp</a>
   </nav>
  </div>
@@ -58,6 +58,69 @@
 <section class="section offers" id="ofertas"><div class="container offer-card"><div><span>✨ NOVEDADES Y PROMOCIONES</span><h2>Siempre hay algo nuevo en Jedran.</h2><p>Pregunta por las ofertas, productos nuevos y disponibilidad.</p><a class="btn light" target="_blank" rel="noopener" href="https://wa.me/527701192781?text=Hola%20Novedades%20Jedran,%20%C2%BFqu%C3%A9%20ofertas%20y%20novedades%20tienen%20disponibles%3F">Preguntar por ofertas</a></div><img src="banner-jedran.jpeg" alt="Novedades Jedran"></div></section>
 
 <section class="section about"><div class="container about-grid"><div class="about-logo"><img src="logo-jedran.jpeg" alt="Novedades Jedran"></div><div><span class="eyebrow">SOMOS JEDRAN</span><h2>Una tienda de novedades para toda ocasión.</h2><p>Tenemos una variedad de artículos para regalar, disfrutar, decorar y usar todos los días. Nuestro catálogo irá creciendo con nuevos productos.</p><div class="benefits"><div>✓ <b>Gran variedad</b></div><div>✓ <b>Atención personalizada</b></div><div>✓ <b>Nuevos productos</b></div></div></div></div></section>
+
+<!-- NUEVA SECCIÓN: UBICACIÓN DEL NEGOCIO -->
+<section class="section ubicacion" id="ubicacion">
+ <div class="container">
+  <div class="heading">
+   <span>ENCUÉNTRANOS</span>
+   <h2>Visítanos en Variedad de Productos Jedrán</h2>
+   <p>Consulta nuestra ubicación y encuentra cómo llegar a nuestra tienda.</p>
+  </div>
+
+  <div class="mapa-jedran">
+   <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.43187065046!2d-98.81020932269294!3d20.032345573266443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a191959e1c4b%3A0x1a4d93a804693b99!2sVariedad%20de%20Productos%20Jedr%C3%A1n!5e0!3m2!1ses-419!2smx!4v1792132674353!5m2!1ses-419!2smx"
+    title="Ubicación de Variedad de Productos Jedrán en Google Maps"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin">
+   </iframe>
+  </div>
+
+  <a
+   class="btn green boton-ubicacion"
+   href="https://www.google.com/maps/dir/?api=1&destination=20.032345573266443%2C-98.81020932269294"
+   target="_blank"
+   rel="noopener noreferrer">
+   📍 Cómo llegar a nuestra tienda
+  </a>
+ </div>
+</section>
+
+<style>
+.ubicacion {
+  scroll-margin-top: 90px;
+}
+
+.mapa-jedran {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mapa-jedran iframe {
+  display: block;
+  width: 100%;
+  height: 350px;
+}
+
+.boton-ubicacion {
+  display: inline-block;
+  margin-top: 24px;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .mapa-jedran iframe {
+    height: 300px;
+  }
+}
+</style>
 </main>
 
 <footer id="contacto" class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="logo-jedran.jpeg" alt="Novedades Jedran"><p>Encuentra lo que buscas y mucho más.</p></div><div><h3>Contacto</h3><a target="_blank" rel="noopener" href="https://wa.me/527701192781">💬 WhatsApp: +52 770 119 2781</a><a href="tel:+525623792086">📞 Llamadas: 562 379 2086</a><p>🕒 Martes a domingo<br>11:30 A.M. a 7:30 P.M.</p></div><div><h3>¿Tienes alguna pregunta?</h3><p>Escríbenos y con gusto te ayudamos a encontrar el producto que buscas.</p><a class="footer-button" target="_blank" rel="noopener" href="https://wa.me/527701192781">Hablar por WhatsApp →</a></div></div><div class="copy">© <span id="year"></span> Novedades Jedran · Todos los derechos reservados.</div></footer>
